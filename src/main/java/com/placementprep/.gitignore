@@ -1,0 +1,17 @@
+# Build folder
+target/
+
+# VS Code settings
+.vscode/
+
+# IntelliJ settings
+.idea/
+
+# Log files
+*.log
+
+# Compiled Java files
+*.class
+
+# Keep database password private
+src/main/resources/application.properties
