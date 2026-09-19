@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Mock Interview</title>
+
+    <link rel="stylesheet" th:href="@{/interview.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/dashboard" class="back-btn">⬅ Back to Dashboard</a>
+
+    <h1>🎤 AI Mock Interview</h1>
+
+    <form action="/submitInterview" method="post">
+
+        <div class="question-box">
+            <h3>1. Tell me about yourself.</h3>
+            <textarea name="q1" rows="4" required></textarea>
+        </div>
+
+        <div class="question-box">
+            <h3>2. Explain your final year project.</h3>
+            <textarea name="q2" rows="4" required></textarea>
+        </div>
+
+        <div class="question-box">
+            <h3>3. Why do you want to join this company?</h3>
+            <textarea name="q3" rows="4" required></textarea>
+        </div>
+
+        <div class="question-box">
+            <h3>4. What are your strengths?</h3>
+            <textarea name="q4" rows="4" required></textarea>
+        </div>
+
+        <div class="question-box">
+            <h3>5. What is Spring Boot and why did you use it?</h3>
+            <textarea name="q5" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Submit Interview</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

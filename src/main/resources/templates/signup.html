@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | AI Placement Prep</title>
+
+    <!-- Signup CSS -->
+    <link rel="stylesheet" href="/signup.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="signup-page">
+
+<div class="signup-card">
+
+    <!-- Logo -->
+    <div class="signup-logo">
+        🎓
+    </div>
+
+    <!-- Heading -->
+    <h1>Create <span>Account</span></h1>
+    <p>Join AI Placement Preparation Platform.</p>
+
+    <!-- Error Message -->
+    <div th:if="${error}" class="message error-message">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span th:text="${error}"></span>
+    </div>
+
+    <!-- Success Message -->
+    <div th:if="${success}" class="message success-message">
+        <i class="fa-solid fa-circle-check"></i>
+        <span th:text="${success}"></span>
+    </div>
+
+    <!-- Signup Form -->
+    <form th:action="@{/signup}" method="post">
+
+        <!-- Full Name -->
+        <div class="signup-input">
+            <i class="fa-solid fa-user"></i>
+            <input type="text"
+                   name="name"
+                   placeholder="Full Name"
+                   required>
+        </div>
+
+        <!-- Email -->
+        <div class="signup-input">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email"
+                   name="email"
+                   placeholder="Email Address"
+                   required>
+        </div>
+
+        <!-- Password -->
+        <div class="signup-input">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password"
+                   name="password"
+                   placeholder="Create Password"
+                   required>
+        </div>
+
+        <!-- College -->
+        <div class="signup-input">
+            <i class="fa-solid fa-building-columns"></i>
+            <input type="text"
+                   name="college"
+                   placeholder="College Name"
+                   required>
+        </div>
+
+        <!-- Branch -->
+        <div class="signup-input">
+            <i class="fa-solid fa-code"></i>
+            <input type="text"
+                   name="branch"
+                   placeholder="Branch (CSE, IT, ECE...)"
+                   required>
+        </div>
+
+        <!-- Button -->
+        <button class="signup-btn" type="submit">
+            <i class="fa-solid fa-user-plus"></i>
+            CREATE ACCOUNT
+        </button>
+
+    </form>
+
+    <!-- Bottom Link -->
+    <div class="bottom-text">
+        Already have an account?
+        <a th:href="@{/}">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

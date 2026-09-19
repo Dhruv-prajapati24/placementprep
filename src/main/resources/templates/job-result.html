@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Jobs</title>
+    <link rel="stylesheet" th:href="@{/job.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Back Button -->
+    <a href="/jobs" class="back-btn">⬅ Back to Skills</a>
+
+    <h1>🎯 Your Job Recommendations</h1>
+
+    <p class="subtitle">
+        Based on your selected skills, here are the best placement opportunities.
+    </p>
+
+    <!-- Match Score -->
+    <div class="score-box">
+        <h2>Skills Match Score</h2>
+        <div class="score" th:text="${matchScore} + '%'"></div>
+    </div>
+
+    <!-- Jobs -->
+    <h2 class="section-title">💼 Recommended Jobs</h2>
+
+    <div th:each="job : ${jobs}" class="job-card">
+
+        <h3 th:text="${job}"></h3>
+
+        <p>📍 <b>Location:</b> Bangalore / Hyderabad / Pune</p>
+
+        <p>💰 <b>Salary:</b> ₹4.5 LPA – ₹10 LPA</p>
+
+        <p>🛠 <b>Skills Required:</b> Java, Spring Boot, SQL, Git, REST API</p>
+
+        <!-- APPLY BUTTON WORKING -->
+        <form action="/applyJob" method="post">
+
+            <input type="hidden" name="company" th:value="${job}"/>
+
+            <input type="hidden" name="role" value="Software Engineer"/>
+
+            <input type="hidden" name="location" value="Bangalore / Hyderabad / Pune"/>
+
+            <input type="hidden" name="salary" value="₹4.5 LPA – ₹10 LPA"/>
+
+            <button type="submit" class="apply-btn">
+                🚀 Apply Now
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Placement Tips -->
+    <div class="tips-box">
+
+        <h2>📈 Improve Your Placement Chances</h2>
+
+        <ul>
+            <li>✅ Add Spring Boot projects on GitHub.</li>
+            <li>✅ Practice DSA on LeetCode daily.</li>
+            <li>✅ Build REST API projects using Spring Boot.</li>
+            <li>✅ Improve SQL query skills.</li>
+            <li>✅ Keep Resume ATS score above 80.</li>
+            <li>✅ Practice AI Mock Interview regularly.</li>
+        </ul>
+
+    </div>
+
+    <!-- Dashboard -->
+    <a href="/dashboard" class="dashboard-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

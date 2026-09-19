@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementPrep | AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="/resume.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="resume-container">
+
+    <!-- Heading -->
+    <h1>
+        <i class="fa-solid fa-file-lines"></i>
+        AI Resume Analyzer
+    </h1>
+
+    <p class="subtitle">
+        Upload your resume and get an ATS Score with AI-powered suggestions.
+    </p>
+
+    <!-- ================= Resume Analyzer ================= -->
+
+    <form action="/analyzeResume"
+          method="post"
+          enctype="multipart/form-data">
+
+        <label class="upload-box">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <h3>Upload Resume (PDF)</h3>
+
+            <p>Only PDF files are supported.</p>
+
+            <input type="file"
+                   name="resumeFile"
+                   accept=".pdf"
+                   required>
+
+        </label>
+
+        <button type="submit">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            Analyze Resume
+        </button>
+
+    </form>
+
+    <!-- ================= Resume Builder ================= -->
+
+    <div class="builder-card">
+
+        <div class="builder-left">
+
+            <h2>
+                <i class="fa-solid fa-pen-ruler"></i>
+                Resume Builder (Overleaf)
+            </h2>
+
+            <p>
+                Create a professional ATS-Friendly Software Engineer Resume using
+                Overleaf's premium template and download it as PDF.
+            </p>
+
+            <ul>
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    ATS Friendly Resume
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Modern Software Engineer Template
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    One Page Professional Resume
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    PDF Download from Overleaf
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="builder-right">
+
+            <a th:href="${overleafLink}"
+               target="_blank"
+               class="overleaf-btn">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Open Resume Builder
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ================= Resume Tips ================= -->
+
+    <div class="tips-box">
+
+        <h2>
+            <i class="fa-solid fa-lightbulb"></i>
+            Resume Tips for Placements
+        </h2>
+
+        <ul>
+
+            <li>Keep your resume limited to one page.</li>
+
+            <li>Add GitHub, LinkedIn and Portfolio links.</li>
+
+            <li>Highlight Java, Spring Boot, SQL and React skills.</li>
+
+            <li>Mention DSA, LeetCode, Projects and Internship experience.</li>
+
+            <li>Use action verbs like Built, Developed, Implemented and Optimized.</li>
+
+        </ul>
+
+    </div>
+
+    <!-- ================= Dashboard Button ================= -->
+
+    <a href="/dashboard" class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+</html>

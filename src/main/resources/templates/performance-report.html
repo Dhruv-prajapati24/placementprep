@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Report</title>
+    <link rel="stylesheet" th:href="@{/interview.css}">
+</head>
+<body>
+
+<div class="report-card">
+
+    <h1>📊 Interview Performance Report</h1>
+
+    <div class="big-score">
+        <span th:text="${score}"></span>/100
+    </div>
+
+    <h3 th:text="${feedback}"></h3>
+
+    <div class="report-grid">
+
+        <div class="report-box">
+            <h2>💬 Communication</h2>
+            <p th:text="${communication} + '%'"></p>
+        </div>
+
+        <div class="report-box">
+            <h2>💻 Technical Knowledge</h2>
+            <p th:text="${technical} + '%'"></p>
+        </div>
+
+        <div class="report-box">
+            <h2>📂 Project Explanation</h2>
+            <p th:text="${project} + '%'"></p>
+        </div>
+
+        <div class="report-box">
+            <h2>⭐ Confidence</h2>
+            <p th:text="${confidence} + '%'"></p>
+        </div>
+
+    </div>
+
+    <div class="tips-box">
+        <h2>✅ Strengths</h2>
+        <p th:text="${strengths}"></p>
+    </div>
+
+    <div class="tips-box">
+        <h2>📈 Improvement Areas</h2>
+        <pre th:text="${improvement}"></pre>
+    </div>
+
+    <div class="btn-group">
+        <a href="/interview/questions" class="retry-btn">🔄 Retry Interview</a>
+
+        <a href="/dashboard" class="dashboard-btn">🏠 Dashboard</a>
+    </div>
+
+</div>
+
+</body>
+</html>

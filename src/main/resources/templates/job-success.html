@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Submitted</title>
+    <link rel="stylesheet" th:href="@{/job.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎉 Application Submitted Successfully</h1>
+
+    <div class="score-box">
+        <h2 th:text="${company}"></h2>
+        <p>You applied for the role of</p>
+        <h3 th:text="${role}"></h3>
+    </div>
+
+    <p class="subtitle">
+        Your application has been saved successfully.
+    </p>
+
+    <a href="/jobs" class="dashboard-btn">
+        💼 Apply for More Jobs
+    </a>
+
+    <a href="/dashboard" class="dashboard-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

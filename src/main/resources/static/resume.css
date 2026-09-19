@@ -1,0 +1,282 @@
+/* ==========================================
+   PlacementPrep - Resume Analyzer + Builder
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ================= Body ================= */
+
+body{
+    background:linear-gradient(135deg,#071942,#123a9b,#2563eb);
+    color:#ffffff;
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+/* ================= Main Container ================= */
+
+.resume-container{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+/* ================= Heading ================= */
+
+h1{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:12px;
+    color:#ffffff;
+}
+
+.subtitle{
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:30px;
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* ================= Upload Box ================= */
+
+.upload-box{
+    display:block;
+    border:2px dashed #38bdf8;
+    background:rgba(255,255,255,0.05);
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    margin-bottom:25px;
+}
+
+.upload-box:hover{
+    background:rgba(56,189,248,0.08);
+    border-color:#7dd3fc;
+    transform:translateY(-2px);
+}
+
+.upload-box i{
+    font-size:55px;
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.upload-box h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.upload-box p{
+    color:#cbd5e1;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.upload-box input{
+    width:100%;
+    margin-top:10px;
+    color:white;
+}
+
+/* ================= Analyze Button ================= */
+
+button{
+    width:100%;
+    padding:15px;
+    background:#22c55e;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
+}
+
+/* ==========================================
+        Resume Builder Section
+========================================== */
+
+.builder-card{
+    margin-top:35px;
+    background:linear-gradient(135deg,#059669,#16a34a);
+    border-radius:22px;
+    padding:28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+.builder-left{
+    flex:1;
+}
+
+.builder-left h2{
+    color:#ffffff;
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.builder-left p{
+    color:#dcfce7;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.builder-left ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.builder-left li{
+    margin:12px 0;
+    color:#ffffff;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.builder-left li i{
+    color:#bbf7d0;
+}
+
+/* Overleaf Button */
+
+.builder-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.overleaf-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-decoration:none;
+    background:#ffffff;
+    color:#15803d;
+    padding:16px 22px;
+    border-radius:12px;
+    font-weight:700;
+    min-width:220px;
+    transition:.3s;
+}
+
+.overleaf-btn:hover{
+    background:#dcfce7;
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+            Resume Tips Section
+========================================== */
+
+.tips-box{
+    margin-top:35px;
+    background:rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:25px;
+}
+
+.tips-box h2{
+    color:#38bdf8;
+    margin-bottom:18px;
+    font-size:24px;
+}
+
+.tips-box ul{
+    list-style:none;
+}
+
+.tips-box li{
+    margin:12px 0;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.tips-box li::before{
+    content:"✅ ";
+    color:#22c55e;
+}
+
+/* ==========================================
+            Back Button
+========================================== */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:30px;
+    text-decoration:none;
+    color:#ffffff;
+    background:rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,0.20);
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#2563eb;
+    transform:translateX(-3px);
+}
+
+/* ==========================================
+              Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    body{
+        padding:20px 15px;
+    }
+
+    .resume-container{
+        padding:22px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .builder-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .builder-right{
+        width:100%;
+    }
+
+    .overleaf-btn{
+        width:100%;
+    }
+
+    .upload-box{
+        padding:25px;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interview Feedback</title>
+
+    <link rel="stylesheet" th:href="@{/interview.css}">
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h1>🎤 Interview Feedback</h1>
+
+    <div class="score">
+        <span th:text="${score}"></span>/100
+    </div>
+
+    <h3 class="feedback" th:text="${feedback}"></h3>
+
+    <div class="tips">
+        <h2>💡 Interview Improvement Tips</h2>
+
+        <ul>
+            <li>Give answers in 3–5 complete sentences.</li>
+            <li>Mention Java, Spring Boot, SQL, REST API and Projects wherever possible.</li>
+            <li>Explain your project with technologies and your role.</li>
+            <li>Use communication, teamwork and problem-solving examples.</li>
+            <li>Keep confidence and clarity while answering.</li>
+        </ul>
+    </div>
+
+    <a href="/dashboard" class="btn">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

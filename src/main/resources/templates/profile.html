@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>My Profile | PlacementPrep</title>
+
+    <link rel="stylesheet" href="/profile.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/dashboard" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Dashboard
+    </a>
+
+    <div class="profile-card">
+
+        <div class="avatar">
+            <i class="fa-solid fa-user-graduate"></i>
+        </div>
+
+        <h1 th:text="${user.name}"></h1>
+
+        <p class="email" th:text="${user.email}"></p>
+
+        <div class="details">
+
+            <div class="detail">
+                <i class="fa-solid fa-building-columns"></i>
+                <span th:text="${user.college}"></span>
+            </div>
+
+            <div class="detail">
+                <i class="fa-solid fa-code"></i>
+                <span th:text="${user.branch}"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box blue">
+            <i class="fa-solid fa-code"></i>
+            <h2 th:text="${dsaProgress + '%'}"></h2>
+            <p>DSA Progress</p>
+        </div>
+
+        <div class="stat-box green">
+            <i class="fa-solid fa-brain"></i>
+            <h2 th:text="${user.aptitudeScore + '%'}"></h2>
+            <p>Aptitude Score</p>
+        </div>
+
+        <div class="stat-box yellow">
+            <i class="fa-solid fa-file-lines"></i>
+            <h2 th:text="${user.resumeScore + '%'}"></h2>
+            <p>Resume ATS Score</p>
+        </div>
+
+        <div class="stat-box red">
+            <i class="fa-solid fa-microphone"></i>
+            <h2 th:text="${user.interviewScore + '%'}"></h2>
+            <p>Interview Score</p>
+        </div>
+
+    </div>
+
+    <div class="overall-box">
+
+        <h2>Overall Placement Progress 🎯</h2>
+
+        <div class="progress-bar">
+            <div class="fill"
+                 th:style="'width:' + ${overall} + '%'"></div>
+        </div>
+
+        <h1 th:text="${overall + '%'}"></h1>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementPrep | Striver DSA Sheet</title>
+
+    <link rel="stylesheet" th:href="@{/dsa.css}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Dashboard Button -->
+    <a href="/dashboard" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Dashboard
+    </a>
+
+    <!-- Heading -->
+    <div class="heading">
+        <h1>
+            <i class="fa-solid fa-laptop-code"></i>
+            Striver DSA Sheet
+        </h1>
+
+        <p>
+            Track your DSA preparation progress and complete questions one by one.
+        </p>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-box">
+
+        <h2>Your Progress 📈</h2>
+
+        <div class="progress-bar">
+            <div class="fill"
+                 th:style="'width:' + ${progress} + '%'"></div>
+        </div>
+
+        <div class="progress-info">
+            <p>
+                <span th:text="${completed}"></span> /
+                <span th:text="${total}"></span>
+                Questions Completed
+            </p>
+
+            <h3 th:text="${progress} + '%'"></h3>
+        </div>
+
+    </div>
+
+    <!-- Difficulty Filter -->
+    <div class="filter-section">
+
+        <div class="filter-title">
+            <i class="fa-solid fa-fire"></i>
+            Difficulty
+        </div>
+
+        <div class="filters">
+
+            <a href="/dsa"
+               th:classappend="${selectedDifficulty == null} ? ' active' : ''">
+                All
+            </a>
+
+            <a href="/dsa?difficulty=Easy"
+               th:classappend="${selectedDifficulty == 'Easy'} ? ' active' : ''">
+                Easy
+            </a>
+
+            <a href="/dsa?difficulty=Medium"
+               th:classappend="${selectedDifficulty == 'Medium'} ? ' active' : ''">
+                Medium
+            </a>
+
+            <a href="/dsa?difficulty=Hard"
+               th:classappend="${selectedDifficulty == 'Hard'} ? ' active' : ''">
+                Hard
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Topic Filter -->
+    <div class="filter-section">
+
+        <div class="filter-title">
+            <i class="fa-solid fa-layer-group"></i>
+            Topics
+        </div>
+
+        <div class="filters">
+
+            <a href="/dsa?topic=Arrays">Arrays</a>
+            <a href="/dsa?topic=Strings">Strings</a>
+            <a href="/dsa?topic=Linked List">Linked List</a>
+            <a href="/dsa?topic=Trees">Trees</a>
+            <a href="/dsa?topic=Graphs">Graphs</a>
+            <a href="/dsa?topic=DP">DP</a>
+
+        </div>
+
+    </div>
+
+    <!-- Questions -->
+    <div class="questions">
+
+        <div th:each="q : ${questions}" class="question-card">
+
+            <!-- Question Title -->
+            <div class="left">
+
+                <h3 th:text="${q.question}"></h3>
+
+                <div class="badges">
+
+                    <span class="topic">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <span th:text="${q.topic}"></span>
+                    </span>
+
+                    <span class="difficulty">
+                        <i class="fa-solid fa-fire"></i>
+                        <span th:text="${q.difficulty}"></span>
+                    </span>
+
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+
+                    <!-- LeetCode Button -->
+                    <a th:if="${q.leetcodeLink != null}"
+                       th:href="${q.leetcodeLink}"
+                       target="_blank"
+                       class="leetcode-btn">
+                        <i class="fa-solid fa-code"></i>
+                        LeetCode
+                    </a>
+
+                    <!-- Notes Button -->
+                    <button type="button"
+                            class="notes-btn"
+                            th:attr="onclick='toggleNotes(' + ${q.id} + ')'">
+                        <i class="fa-solid fa-book-open"></i>
+                        Notes
+                    </button>
+
+                    <!-- YouTube Button -->
+                    <a th:if="${q.youtubeLink != null}"
+                       th:href="${q.youtubeLink}"
+                       target="_blank"
+                       class="video-btn">
+                        <i class="fa-brands fa-youtube"></i>
+                        Video
+                    </a>
+
+                </div>
+
+                <!-- Hidden Notes Box -->
+                <div th:id="'notes-' + ${q.id}"
+                     class="notes-box"
+                     style="display:none;">
+
+                    <h4>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Quick Notes
+                    </h4>
+
+                    <p th:text="${q.notes}"></p>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="right">
+
+                <!-- Mark Complete -->
+                <form th:if="${!q.completed}"
+                      action="/completeQuestion"
+                      method="post">
+
+                    <input type="hidden"
+                           name="id"
+                           th:value="${q.id}">
+
+                    <button type="submit" class="complete-btn">
+                        <i class="fa-solid fa-check"></i>
+                        Mark Complete
+                    </button>
+
+                </form>
+
+                <!-- Completed -->
+                <div th:if="${q.completed}" class="done">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Completed
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Reset Progress -->
+    <div class="reset-box">
+
+        <form action="/resetDSA" method="post">
+
+            <button type="submit" class="reset-btn">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset All Progress
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- Notes Toggle Script -->
+<script>
+function toggleNotes(id){
+    const box = document.getElementById("notes-" + id);
+
+    if(box.style.display === "none" || box.style.display === ""){
+        box.style.display = "block";
+    }else{
+        box.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

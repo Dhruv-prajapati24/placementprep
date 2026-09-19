@@ -1,0 +1,339 @@
+/* =========================================
+   PlacementPrep Dashboard - FINAL VERSION
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#071942,#163d9b,#0058ff);
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= Layout ================= */
+
+.dashboard{
+    display:flex;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+    width:250px;
+    min-height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(5,18,60,.96);
+    backdrop-filter:blur(20px);
+    padding:28px 18px;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    color:#67d7ff;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:35px;
+    text-align:center;
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 16px;
+    margin-bottom:12px;
+    border-radius:14px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.sidebar a i{
+    width:22px;
+    font-size:18px;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#1d4ed8;
+    transform:translateX(5px);
+}
+
+/* Logout */
+
+.logout{
+    margin-top:auto;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+
+.logout a,
+.logout a i{
+    color:white !important;
+    font-weight:600;
+}
+
+/* ================= Main ================= */
+
+.main-content{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:35px;
+}
+
+/* ================= Topbar ================= */
+
+.topbar{
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    font-size:54px;
+    font-weight:700;
+}
+
+.topbar span{
+    color:#1dd7ff;
+}
+
+.topbar p{
+    margin-top:8px;
+    font-size:22px;
+    color:#dbeafe;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(200px,1fr));
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.card{
+    text-decoration:none;
+    color:white;
+    border-radius:22px;
+    padding:22px;
+    height:250px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    transition:.3s;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.45);
+}
+
+.card i{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:18px;
+    font-weight:700;
+    line-height:1.3;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:15px;
+    line-height:1.5;
+    color:#eef7ff;
+    margin-bottom:16px;
+}
+
+/* Button */
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:11px;
+    border-radius:30px;
+    border:2px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.12);
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.card:hover .btn{
+    background:white;
+    color:#111827;
+}
+
+/* Card Colors */
+
+.aptitude{
+    background:linear-gradient(135deg,#006CFF,#2FB9FF);
+}
+
+.dsa{
+    background:linear-gradient(135deg,#651FFF,#BE4BFF);
+}
+
+.resume{
+    background:linear-gradient(135deg,#00A86B,#2ED7A1);
+}
+
+.interview{
+    background:linear-gradient(135deg,#FF8400,#FFA726);
+}
+
+.jobs{
+    background:linear-gradient(135deg,#FF004D,#FF3366);
+}
+
+/* ==================================================
+   Resume Card FIX (No Overlap + Button Up)
+================================================== */
+
+.resume p{
+    flex:1;
+    margin-bottom:8px;
+}
+
+.resume .btn{
+    margin-top:auto;
+    margin-bottom:12px;
+    transform:translateY(-8px);
+}
+
+/* Job Button */
+
+.jobs .btn{
+    margin-top:auto;
+    margin-bottom:12px;
+}
+
+/* ================= Progress ================= */
+
+.progress-box{
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(16px);
+    padding:30px;
+    border-radius:24px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.progress-box h2{
+    font-size:34px;
+    margin-bottom:28px;
+}
+
+.progress-item{
+    margin-bottom:22px;
+}
+
+.label-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-size:17px;
+    font-weight:500;
+}
+
+.progress{
+    width:100%;
+    height:14px;
+    background:#233E7A;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress div{
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(to right,#16D7FF,#3B82F6);
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:1600px){
+
+    .cards{
+        grid-template-columns:repeat(5,minmax(180px,1fr));
+        gap:15px;
+    }
+
+    .card{
+        height:235px;
+    }
+
+    .topbar h1{
+        font-size:48px;
+    }
+}
+
+@media(max-width:1400px){
+
+    .cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:1100px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        min-height:auto;
+    }
+
+    .main-content{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        height:220px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .topbar p{
+        font-size:18px;
+    }
+
+    .resume .btn{
+        transform:none;
+        margin-bottom:8px;
+    }
+}

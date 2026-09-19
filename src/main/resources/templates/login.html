@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Placement Prep - Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h1>🤖 AI Placement Prep</h1>
+    <p>Login to continue your placement journey.</p>
+
+    <!-- ✅ Signup Success Message -->
+    <div th:if="${param.success}" class="success-box">
+        <i class="fa-solid fa-circle-check"></i>
+        Account Created Successfully! Please Login.
+    </div>
+
+    <!-- Wrong Email / Password -->
+    <div th:if="${param.error}" class="error-box">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        Invalid Email or Password.
+    </div>
+
+    <!-- Login Form -->
+    <form action="/login" method="post">
+
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Email"
+                   required>
+        </div>
+
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required>
+        </div>
+
+        <button type="submit">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            LOGIN
+        </button>
+
+    </form>
+
+    <p class="signup-text">
+        Don't have an account?
+        <a href="/signup">Signup</a>
+    </p>
+
+</div>
+
+</body>
+</html>

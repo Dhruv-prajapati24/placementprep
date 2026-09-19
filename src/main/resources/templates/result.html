@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementPrep | Quiz Result</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#071942,#123a9b,#2563eb);
+            color:white;
+            padding:20px;
+        }
+
+        /* Card */
+
+        .result-card{
+            width:460px;
+            padding:35px 30px;
+            border-radius:25px;
+            text-align:center;
+            background:rgba(255,255,255,0.10);
+            backdrop-filter:blur(18px);
+            box-shadow:0 15px 35px rgba(0,0,0,.35);
+            border:1px solid rgba(255,255,255,.15);
+        }
+
+        /* Trophy */
+
+        .trophy{
+            width:90px;
+            height:90px;
+            background:linear-gradient(135deg,#FFD54F,#F59E0B);
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0 auto 20px;
+            font-size:42px;
+            color:white;
+            box-shadow:0 10px 20px rgba(245,158,11,.45);
+        }
+
+        h1{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            color:#dbeafe;
+            font-size:15px;
+            margin-bottom:25px;
+        }
+
+        /* Circular Score */
+
+        .score-circle{
+            width:180px;
+            height:180px;
+            margin:0 auto 25px;
+            border-radius:50%;
+            background:conic-gradient(#22c55e 0deg 260deg,#1e3a8a 260deg 360deg);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            box-shadow:0 0 25px rgba(34,197,94,.4);
+        }
+
+        .score-inner{
+            width:145px;
+            height:145px;
+            border-radius:50%;
+            background:#071942;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .score-inner h2{
+            font-size:40px;
+            color:#22c55e;
+        }
+
+        .score-inner span{
+            color:#cbd5e1;
+            font-size:14px;
+        }
+
+        /* Stats */
+
+        .stats{
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            margin:25px 0;
+        }
+
+        .stat-box{
+            flex:1;
+            background:rgba(255,255,255,.08);
+            padding:15px;
+            border-radius:15px;
+        }
+
+        .stat-box i{
+            color:#38bdf8;
+            font-size:24px;
+            margin-bottom:8px;
+        }
+
+        .stat-box h3{
+            font-size:20px;
+        }
+
+        .stat-box p{
+            color:#cbd5e1;
+            font-size:13px;
+        }
+
+        /* Performance */
+
+        .performance{
+            margin:20px 0;
+            padding:18px;
+            border-radius:15px;
+            background:rgba(34,197,94,.12);
+            border-left:5px solid #22c55e;
+        }
+
+        .performance h3{
+            color:#4ade80;
+            margin-bottom:8px;
+        }
+
+        .performance p{
+            color:#dbeafe;
+            font-size:14px;
+            line-height:1.6;
+        }
+
+        /* Buttons */
+
+        .btn-group{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+            margin-top:25px;
+        }
+
+        .btn{
+            text-decoration:none;
+            padding:14px;
+            border-radius:12px;
+            color:white;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        .dashboard-btn{
+            background:#22c55e;
+        }
+
+        .dashboard-btn:hover{
+            background:#16a34a;
+            transform:translateY(-2px);
+        }
+
+        .retry-btn{
+            background:#2563eb;
+        }
+
+        .retry-btn:hover{
+            background:#1d4ed8;
+            transform:translateY(-2px);
+        }
+
+        footer{
+            margin-top:20px;
+            color:#94a3b8;
+            font-size:13px;
+        }
+
+        /* Mobile */
+
+        @media(max-width:500px){
+
+            .result-card{
+                width:100%;
+                padding:25px 20px;
+            }
+
+            .stats{
+                flex-direction:column;
+            }
+
+            .score-circle{
+                width:150px;
+                height:150px;
+            }
+
+            .score-inner{
+                width:120px;
+                height:120px;
+            }
+
+            .score-inner h2{
+                font-size:32px;
+            }
+
+            h1{
+                font-size:26px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <!-- Trophy Icon -->
+    <div class="trophy">
+        <i class="fa-solid fa-trophy"></i>
+    </div>
+
+    <h1>Quiz Completed 🎉</h1>
+
+    <p class="subtitle">
+        Great job! Here's your Aptitude Quiz Result.
+    </p>
+
+    <!-- Score Circle -->
+    <div class="score-circle">
+        <div class="score-inner">
+            <h2>
+                <span th:text="${score}"></span> /
+                <span th:text="${total}"></span>
+            </h2>
+            <span>Score</span>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+
+        <div class="stat-box">
+            <i class="fa-solid fa-check-circle"></i>
+            <h3 th:text="${score}"></h3>
+            <p>Correct Answers</p>
+        </div>
+
+        <div class="stat-box">
+            <i class="fa-solid fa-list-check"></i>
+            <h3 th:text="${total}"></h3>
+            <p>Total Questions</p>
+        </div>
+
+    </div>
+
+    <!-- Performance Message -->
+    <div class="performance">
+
+        <h3>🏆 Performance Feedback</h3>
+
+        <p th:if="${score >= (total * 8 / 10)}">
+            Excellent! You're placement ready in Aptitude. Keep practicing consistently.
+        </p>
+
+        <p th:if="${score >= (total * 6 / 10) and score < (total * 8 / 10)}">
+            Good performance! Practice a few more aptitude sets to improve your speed and accuracy.
+        </p>
+
+        <p th:if="${score < (total * 6 / 10)}">
+            Keep practicing. Focus on Quantitative Aptitude, Logical Reasoning and Verbal Ability to improve your score.
+        </p>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+
+        <a href="/aptitude" class="btn retry-btn">
+            <i class="fa-solid fa-rotate-right"></i>
+            Retry Quiz
+        </a>
+
+        <a href="/dashboard" class="btn dashboard-btn">
+            <i class="fa-solid fa-house"></i>
+            Back to Dashboard
+        </a>
+
+    </div>
+
+    <footer>
+        PlacementPrep • AI Placement Preparation Portal
+    </footer>
+
+</div>
+
+</body>
+</html>

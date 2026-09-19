@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementPrep Dashboard</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" th:href="@{/dashboard.css}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= Sidebar ================= -->
+    <aside class="sidebar">
+
+        <h2>🎓 PlacementPrep</h2>
+
+        <a href="/dashboard" class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <!-- NEW PROFILE BUTTON -->
+        <a href="/profile">
+            <i class="fa-solid fa-user"></i>
+            My Profile
+        </a>
+
+        <a href="/aptitude">
+            <i class="fa-solid fa-book"></i>
+            Aptitude
+        </a>
+
+        <a href="/dsa">
+            <i class="fa-solid fa-code"></i>
+            DSA Sheet
+        </a>
+
+        <a href="/resume">
+            <i class="fa-solid fa-file-lines"></i>
+            Resume Analyzer & Builder
+        </a>
+
+        <a href="/interview">
+            <i class="fa-solid fa-microphone"></i>
+            Mock Interview
+        </a>
+
+        <a href="/jobs">
+            <i class="fa-solid fa-briefcase"></i>
+            Job Recommendation
+        </a>
+
+        <!-- Logout -->
+        <div class="logout">
+            <a href="/">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+    <main class="main-content">
+
+        <!-- Welcome Section -->
+        <div class="topbar">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+
+                <div>
+                    <h1>
+                        Welcome
+                        <span th:text="${username}">Dhruv Prajapati</span>
+                        👋
+                    </h1>
+
+                    <p>AI Placement Preparation Dashboard</p>
+                </div>
+
+                <!-- Profile Button -->
+                <a href="/profile"
+                   style="text-decoration:none;background:#1dd7ff;color:#071942;padding:12px 20px;border-radius:30px;font-weight:700;display:flex;align-items:center;gap:8px;">
+                    <i class="fa-solid fa-user-circle"></i>
+                    My Profile
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ================= Feature Cards ================= -->
+        <div class="cards">
+
+            <!-- Aptitude -->
+            <a href="/aptitude" class="card aptitude">
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>Aptitude Practice</h3>
+
+                <p>1000+ Questions with Placement Level Tests.</p>
+
+                <span class="btn">Open Aptitude →</span>
+            </a>
+
+            <!-- DSA -->
+            <a href="/dsa" class="card dsa">
+                <i class="fa-solid fa-code"></i>
+
+                <h3>DSA Sheet</h3>
+
+                <p>Striver + LeetCode + Notes + Video Solutions.</p>
+
+                <span class="btn">Open DSA →</span>
+            </a>
+
+            <!-- Resume -->
+            <a href="/resume" class="card resume">
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>Resume Analyzer & Builder</h3>
+
+                <p>ATS Score • AI Suggestions • Resume Builder (Overleaf).</p>
+
+                <span class="btn">Open Resume Tool →</span>
+            </a>
+
+            <!-- AI Mock Interview -->
+            <a href="/interview" class="card interview">
+                <i class="fa-solid fa-microphone"></i>
+
+                <h3>AI Mock Interview</h3>
+
+                <p>Practice HR + Technical Interview Questions.</p>
+
+                <span class="btn">Start Interview →</span>
+            </a>
+
+            <!-- Job Recommendation -->
+            <a href="/jobs" class="card jobs">
+                <i class="fa-solid fa-briefcase"></i>
+
+                <h3>Job Recommendation</h3>
+
+                <p>Find placement jobs based on your technical skills.</p>
+
+                <span class="btn">Open Jobs →</span>
+            </a>
+
+        </div>
+
+        <!-- ================= Progress Section ================= -->
+        <div class="progress-box">
+
+            <h2>Your Placement Progress 📈</h2>
+
+            <!-- Aptitude -->
+            <div class="progress-item">
+                <div class="label-row">
+                    <span>Aptitude Completion</span>
+                    <span>65%</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width:65%"></div>
+                </div>
+            </div>
+
+            <!-- DSA -->
+            <div class="progress-item">
+                <div class="label-row">
+                    <span>DSA Progress</span>
+                    <span>40%</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width:40%"></div>
+                </div>
+            </div>
+
+            <!-- Resume -->
+            <div class="progress-item">
+                <div class="label-row">
+                    <span>Resume ATS Score</span>
+                    <span>80%</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width:80%"></div>
+                </div>
+            </div>
+
+            <!-- Interview -->
+            <div class="progress-item">
+                <div class="label-row">
+                    <span>Interview Score</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width:70%"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

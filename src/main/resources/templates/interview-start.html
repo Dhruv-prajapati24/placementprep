@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Mock Interview</title>
+    <link rel="stylesheet" th:href="@{/interview.css}">
+</head>
+
+<body>
+
+<div class="start-card">
+
+    <h1>🎤 AI Mock Interview</h1>
+
+    <p class="subtitle">
+        Welcome <strong th:text="${candidateName}"></strong>
+    </p>
+
+    <div class="info-box">
+
+        <div class="info-item">
+            <h3>📝 Questions</h3>
+            <p th:text="${questions}"></p>
+        </div>
+
+        <div class="info-item">
+            <h3>⏱ Duration</h3>
+            <p th:text="${duration}"></p>
+        </div>
+
+    </div>
+
+    <div class="instructions">
+
+        <h2>📋 Instructions</h2>
+
+        <ul>
+            <li>Answer all 5 interview questions.</li>
+            <li>Write answers in complete sentences.</li>
+            <li>Use technical keywords like Java, Spring Boot, SQL, REST API.</li>
+            <li>Explain your project clearly.</li>
+            <li>Click Submit to get AI feedback and score.</li>
+        </ul>
+
+    </div>
+
+    <a href="/interview/questions" class="start-btn">
+        🚀 Start Interview
+    </a>
+
+</div>
+
+</body>
+</html>

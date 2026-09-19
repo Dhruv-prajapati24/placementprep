@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Analysis Result</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#0b3d91;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            color:white;
+        }
+
+        .card{
+            width:520px;
+            padding:30px;
+            border-radius:20px;
+            background:rgba(255,255,255,0.12);
+            text-align:center;
+        }
+
+        .score{
+            font-size:60px;
+            color:#22c55e;
+            font-weight:bold;
+            margin:20px;
+        }
+
+        .missing{
+            background:#123;
+            padding:15px;
+            border-radius:10px;
+            text-align:left;
+            margin-top:20px;
+            white-space:pre-line;
+            color:#FFD166;
+        }
+
+        a{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 20px;
+            background:#22c55e;
+            color:white;
+            border-radius:10px;
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Resume Analysis</h1>
+
+    <p><b>File:</b> <span th:text="${fileName}"></span></p>
+
+    <h2>ATS Score</h2>
+
+    <div class="score">
+        <span th:text="${score}"></span>/100
+    </div>
+
+    <p th:text="${suggestion}"></p>
+
+    <div class="missing" th:if="${missingSkills != ''}">
+        <h3>Missing ATS Skills</h3>
+        <div th:text="${missingSkills}"></div>
+    </div>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

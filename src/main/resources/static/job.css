@@ -1,0 +1,175 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:850px;
+    background:rgba(255,255,255,.12);
+    padding:35px;
+    border-radius:20px;
+    backdrop-filter:blur(8px);
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+h1{
+    text-align:center;
+    margin:20px 0;
+    font-size:42px;
+}
+
+.subtitle{
+    text-align:center;
+    margin-bottom:30px;
+    color:#dbeafe;
+    font-size:18px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.skills-grid label{
+    background:#021f3f;
+    padding:18px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.skills-grid label:hover{
+    background:#063970;
+}
+
+input[type="checkbox"]{
+    margin-right:10px;
+    transform:scale(1.3);
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#22c55e;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+
+/* ============================= */
+/* Job Result Page */
+/* ============================= */
+
+.score-box{
+    background:#021f3f;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    margin:25px 0;
+}
+
+.score{
+    font-size:60px;
+    color:#22c55e;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.section-title{
+    margin:25px 0 15px;
+    color:#ffd54a;
+}
+
+.job-card{
+    background:#082447;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.job-card h3{
+    color:#22c55e;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    margin:8px 0;
+    color:#dbeafe;
+}
+
+.apply-btn{
+    margin-top:15px;
+    background:#16a34a;
+    border:none;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    width:200px;
+}
+
+.apply-btn:hover{
+    background:#15803d;
+}
+
+.tips-box{
+    background:#021f3f;
+    padding:25px;
+    border-radius:15px;
+    margin-top:30px;
+}
+
+.tips-box h2{
+    color:#ffd54a;
+    margin-bottom:15px;
+}
+
+.tips-box li{
+    margin:10px 0;
+    line-height:1.6;
+}
+
+.dashboard-btn{
+    display:block;
+    margin-top:30px;
+    background:#22c55e;
+    text-align:center;
+    padding:15px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.dashboard-btn:hover{
+    background:#16a34a;
+}

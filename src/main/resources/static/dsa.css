@@ -1,0 +1,383 @@
+/* ==========================================
+   PlacementPrep - DSA Sheet Premium CSS (FINAL)
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#071942,#123a9b,#2563eb);
+    color:#ffffff;
+    min-height:100vh;
+}
+
+/* ================= Container ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 25px;
+}
+
+/* ================= Dashboard Button ================= */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:10px 18px;
+    border-radius:12px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.back-btn i{
+    color:#fff;
+}
+
+.back-btn:hover{
+    background:#2563eb;
+    transform:translateX(-3px);
+}
+
+/* ================= Heading ================= */
+
+.heading{
+    text-align:center;
+    margin:25px 0 30px;
+}
+
+.heading h1{
+    font-size:40px;
+    color:white;
+    margin-bottom:10px;
+}
+
+.heading p{
+    color:#dbeafe;
+    font-size:16px;
+}
+
+/* ================= Progress Box ================= */
+
+.progress-box{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.progress-box h2{
+    text-align:center;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.progress-bar{
+    width:100%;
+    height:14px;
+    background:#243f7c;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    background:linear-gradient(90deg,#22c55e,#34d399);
+    border-radius:20px;
+    transition:width .4s ease;
+}
+
+.progress-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+.progress-info p{
+    color:#e2e8f0;
+    font-size:17px;
+}
+
+.progress-info h3{
+    color:#22c55e;
+    font-size:28px;
+}
+
+/* ================= Filter Section ================= */
+
+.filter-section{
+    margin:25px 0;
+}
+
+.filter-title{
+    color:#FFD54F;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.filters a{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:10px 18px;
+    border-radius:25px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.filters a:hover,
+.filters a.active{
+    background:#22c55e;
+}
+
+/* ================= Question Cards ================= */
+
+.questions{
+    margin-top:30px;
+}
+
+.question-card{
+    background:#0b2348;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+    transition:.3s;
+}
+
+.question-card:hover{
+    background:#12315f;
+    transform:translateY(-4px);
+}
+
+/* Question Title */
+
+.left h3{
+    font-size:22px;
+    color:white;
+    margin-bottom:15px;
+}
+
+/* Topic + Difficulty */
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.topic,
+.difficulty{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.topic{
+    background:#2563eb;
+}
+
+.difficulty{
+    background:#f59e0b;
+}
+
+/* ================= Buttons Row ================= */
+
+.action-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+/* Common Button Style */
+
+.complete-btn,
+.leetcode-btn,
+.notes-btn,
+.video-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+/* Complete Button */
+
+.complete-btn{
+    background:#16a34a;
+    color:white;
+    margin-top:14px;   /* ✅ Gap added from buttons above */
+}
+
+.complete-btn:hover{
+    background:#15803d;
+    transform:translateY(-2px);
+}
+
+/* LeetCode */
+
+.leetcode-btn{
+    background:#f59e0b;
+    color:white;
+}
+
+.leetcode-btn:hover{
+    background:#d97706;
+    transform:translateY(-2px);
+}
+
+/* Notes */
+
+.notes-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.notes-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* YouTube */
+
+.video-btn{
+    background:#dc2626;
+    color:white;
+}
+
+.video-btn:hover{
+    background:#b91c1c;
+    transform:translateY(-2px);
+}
+
+/* Completed */
+
+.done{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#22c55e;
+    font-weight:700;
+    margin-top:14px;
+    font-size:16px;
+}
+
+/* ================= Notes Box ================= */
+
+.notes-box{
+    background:rgba(255,255,255,.08);
+    border-left:4px solid #3b82f6;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+    color:#e2e8f0;
+    line-height:1.6;
+}
+
+.notes-box h4{
+    color:#60a5fa;
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+/* ================= Reset Button ================= */
+
+.reset-box{
+    text-align:center;
+    margin:35px 0;
+}
+
+.reset-btn{
+    background:#dc2626;
+    color:white;
+    border:none;
+    padding:13px 24px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.reset-btn:hover{
+    background:#b91c1c;
+    transform:translateY(-2px);
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:768px){
+
+    .container{
+        padding:18px;
+    }
+
+    .heading h1{
+        font-size:30px;
+    }
+
+    .progress-info{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .complete-btn,
+    .leetcode-btn,
+    .notes-btn,
+    .video-btn{
+        width:100%;
+    }
+
+    .filters{
+        gap:8px;
+    }
+
+    .filters a{
+        font-size:13px;
+        padding:8px 14px;
+    }
+
+    .left h3{
+        font-size:18px;
+    }
+}
