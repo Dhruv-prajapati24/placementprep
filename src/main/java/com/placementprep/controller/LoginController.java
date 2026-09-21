@@ -17,29 +17,24 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
-    // ================= LOGIN VALIDATION =================
     @PostMapping("/login")
     public String loginUser(@RequestParam String email,
                             @RequestParam String password,
                             HttpSession session,
                             Model model) {
 
-        User user = userRepository.findByEmailAndPassword(email, password);
+        // Sirf email se user nikalo
+        User user = userRepository.findByEmail(email);
 
-        if (user != null) {
+        if (user != null && user.getPassword().equals(password)) {
 
-            // Save user session
             session.setAttribute("userId", user.getId());
             session.setAttribute("username", user.getName());
 
-            // Go to Dashboard
             return "redirect:/dashboard";
         }
 
-        // Wrong Email or Password
         model.addAttribute("error", "Wrong Email or Password!");
-
-        // Stay on Login Page
         return "login";
     }
 }

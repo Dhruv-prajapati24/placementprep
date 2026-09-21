@@ -8,10 +8,6 @@ import com.placementprep.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    // Check user by email
     User findByEmail(String email);
-
-    // Login using email and password
-    User findByEmailAndPassword(String email, String password);
 
 }
