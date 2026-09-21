@@ -1,12 +1,11 @@
 package com.placementprep.controller;
 
+import com.placementprep.entity.User;
+import com.placementprep.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.placementprep.entity.User;
-import com.placementprep.repository.UserRepository;
 
 @Controller
 public class SignupController {
@@ -14,7 +13,7 @@ public class SignupController {
     @Autowired
     private UserRepository userRepository;
 
-    // Signup page
+    // Signup Page
     @GetMapping("/signup")
     public String signupPage() {
         return "signup";
@@ -22,17 +21,16 @@ public class SignupController {
 
     // Create Account
     @PostMapping("/signup")
-    public String signup(User user) {
+    public String createAccount(User user) {
 
         // Email already exists
         if (userRepository.findByEmail(user.getEmail()) != null) {
-            return "redirect:/signup";
+            return "redirect:/signup?exists";
         }
 
-        // Save user in database
         userRepository.save(user);
 
-        // Redirect to login page
+        // Login page par bhejo
         return "redirect:/";
     }
 }
