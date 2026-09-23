@@ -169,6 +169,56 @@ public class DataLoader implements CommandLineRunner {
             d5.setYoutubeLink("https://youtu.be/hTM3phVI6YQ");
             d5.setNotes("Solve using DFS recursion.");
             dsaRepository.save(d5);
+
+            DSAQuestion d6 = new DSAQuestion();
+            d6.setTopic("Strings");
+            d6.setQuestion("Longest Substring Without Repeating Characters");
+            d6.setDifficulty("Medium");
+            d6.setCompleted(false);
+            d6.setLeetcodeLink("https://leetcode.com/problems/longest-substring-without-repeating-characters/");
+            d6.setYoutubeLink("https://youtu.be/wiGpQwVHdE0");
+            d6.setNotes("Use Sliding Window + HashMap.");
+            dsaRepository.save(d6);
+
+            DSAQuestion d7 = new DSAQuestion();
+            d7.setTopic("Binary Search");
+            d7.setQuestion("Search in Rotated Sorted Array");
+            d7.setDifficulty("Medium");
+            d7.setCompleted(false);
+            d7.setLeetcodeLink("https://leetcode.com/problems/search-in-rotated-sorted-array/");
+            d7.setYoutubeLink("https://youtu.be/U8XENwh8Oy8");
+            d7.setNotes("Binary Search on rotated array.");
+            dsaRepository.save(d7);
+
+            DSAQuestion d8 = new DSAQuestion();
+            d8.setTopic("Stack");
+            d8.setQuestion("Valid Parentheses");
+            d8.setDifficulty("Easy");
+            d8.setCompleted(false);
+            d8.setLeetcodeLink("https://leetcode.com/problems/valid-parentheses/");
+            d8.setYoutubeLink("https://youtu.be/WTzjTskDFMg");
+            d8.setNotes("Use Stack to validate brackets.");
+            dsaRepository.save(d8);
+
+            DSAQuestion d9 = new DSAQuestion();
+            d9.setTopic("Trees");
+            d9.setQuestion("Binary Tree Level Order Traversal");
+            d9.setDifficulty("Medium");
+            d9.setCompleted(false);
+            d9.setLeetcodeLink("https://leetcode.com/problems/binary-tree-level-order-traversal/");
+            d9.setYoutubeLink("https://youtu.be/EoAsWbO7sqg");
+            d9.setNotes("Use Queue for BFS traversal.");
+            dsaRepository.save(d9);
+
+            DSAQuestion d10 = new DSAQuestion();
+            d10.setTopic("Dynamic Programming");
+            d10.setQuestion("Climbing Stairs");
+            d10.setDifficulty("Easy");
+            d10.setCompleted(false);
+            d10.setLeetcodeLink("https://leetcode.com/problems/climbing-stairs/");
+            d10.setYoutubeLink("https://youtu.be/Y0lT9Fck7qI");
+            d10.setNotes("Classic Fibonacci Dynamic Programming.");
+            dsaRepository.save(d10);
         }
 
         System.out.println("✅ Aptitude & DSA Questions Inserted Successfully!");
