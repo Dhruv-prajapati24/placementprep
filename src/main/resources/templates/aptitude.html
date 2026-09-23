@@ -2,9 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Aptitude Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude Practice | PlacementPrep</title>
 
     <link rel="stylesheet" href="/aptitude.css">
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -12,44 +14,72 @@
 
 <div class="quiz-container">
 
+    <!-- Header -->
     <div class="top-bar">
-        <h1><i class="fa-solid fa-brain"></i> Aptitude Practice</h1>
-        <a href="/dashboard" class="back-btn">⬅ Dashboard</a>
+        <h1>
+            <i class="fa-solid fa-brain"></i>
+            Aptitude Practice
+        </h1>
+
+        <a href="/dashboard" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
+        </a>
     </div>
 
-    <!-- IMPORTANT: action + method add kiya -->
+    <!-- Quiz Form -->
     <form action="/submitQuiz" method="post">
 
-        <div class="question-card" th:each="q,stat : ${questions}">
+        <!-- Questions -->
+        <div class="question-card" th:each="q, stat : ${questions}">
 
             <h2>
-                Q<span th:text="${stat.count}"></span>.
-                <span th:text="${q.question}"></span>
+                Question <span th:text="${stat.count}"></span>
             </h2>
 
+            <p class="question-text" th:text="${q.question}"></p>
+
+            <!-- Option A -->
             <label class="option">
-                <input type="radio" th:name="'q'+${q.id}" value="A" required>
+                <input type="radio"
+                       th:name="'q' + ${q.id}"
+                       th:value="${q.optionA}"
+                       required>
+
                 <span th:text="${q.optionA}"></span>
             </label>
 
+            <!-- Option B -->
             <label class="option">
-                <input type="radio" th:name="'q'+${q.id}" value="B">
+                <input type="radio"
+                       th:name="'q' + ${q.id}"
+                       th:value="${q.optionB}">
+
                 <span th:text="${q.optionB}"></span>
             </label>
 
+            <!-- Option C -->
             <label class="option">
-                <input type="radio" th:name="'q'+${q.id}" value="C">
+                <input type="radio"
+                       th:name="'q' + ${q.id}"
+                       th:value="${q.optionC}">
+
                 <span th:text="${q.optionC}"></span>
             </label>
 
+            <!-- Option D -->
             <label class="option">
-                <input type="radio" th:name="'q'+${q.id}" value="D">
+                <input type="radio"
+                       th:name="'q' + ${q.id}"
+                       th:value="${q.optionD}">
+
                 <span th:text="${q.optionD}"></span>
             </label>
 
         </div>
 
-        <button class="submit-btn" type="submit">
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
             <i class="fa-solid fa-paper-plane"></i>
             Submit Quiz
         </button>
