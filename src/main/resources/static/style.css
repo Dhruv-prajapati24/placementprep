@@ -26,8 +26,8 @@ body{
 body::before{
     content:"";
     position:absolute;
-    width:320px;
-    height:320px;
+    width:350px;
+    height:350px;
     background:#00d4ff;
     border-radius:50%;
     filter:blur(120px);
@@ -40,13 +40,13 @@ body::before{
 body::after{
     content:"";
     position:absolute;
-    width:280px;
-    height:280px;
+    width:320px;
+    height:320px;
     background:#8a2be2;
     border-radius:50%;
     filter:blur(120px);
-    bottom:-100px;
-    right:-100px;
+    bottom:-120px;
+    right:-120px;
     opacity:.7;
     z-index:0;
 }
@@ -56,22 +56,23 @@ body::after{
     position:relative;
     z-index:10;
     width:100%;
-    max-width:420px;
-    padding:40px 32px;
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.18);
+    max-width:430px;
+    padding:40px 35px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
     backdrop-filter:blur(18px);
     border-radius:24px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
     text-align:center;
     color:#fff;
     animation:fadeIn .8s ease;
 }
 
+/* ================= ANIMATION ================= */
 @keyframes fadeIn{
     from{
         opacity:0;
-        transform:translateY(25px);
+        transform:translateY(30px);
     }
     to{
         opacity:1;
@@ -79,27 +80,27 @@ body::after{
     }
 }
 
-/* ================= TITLE ================= */
+/* ================= HEADING ================= */
 .login-box h1{
     font-size:36px;
     font-weight:700;
-    margin-bottom:12px;
-    line-height:1.25;
+    line-height:1.3;
+    margin-bottom:10px;
 }
 
 .login-box p{
+    color:#d8e8ff;
     font-size:15px;
-    color:#dcecff;
-    margin-bottom:24px;
     line-height:1.6;
+    margin-bottom:24px;
 }
 
-/* ================= SUCCESS ================= */
+/* ================= SUCCESS MESSAGE ================= */
 .success-box{
     width:100%;
-    background:rgba(0,255,140,.15);
+    background:rgba(0,255,140,.18);
     border:1px solid #00ff99;
-    color:#dfffea;
+    color:#d8ffe8;
     padding:12px;
     border-radius:10px;
     margin-bottom:18px;
@@ -115,12 +116,12 @@ body::after{
     color:#00ff99;
 }
 
-/* ================= ERROR ================= */
+/* ================= ERROR MESSAGE ================= */
 .error-box{
     width:100%;
-    background:rgba(255,77,77,.15);
+    background:rgba(255,77,77,.18);
     border:1px solid #ff4d4d;
-    color:#ffe6e6;
+    color:#ffe5e5;
     padding:12px;
     border-radius:10px;
     margin-bottom:18px;
@@ -136,7 +137,7 @@ body::after{
     color:#ff4d4d;
 }
 
-/* ================= INPUT ================= */
+/* ================= INPUT BOX ================= */
 .input-box{
     position:relative;
     margin:16px 0;
@@ -147,13 +148,13 @@ body::after{
     left:18px;
     top:50%;
     transform:translateY(-50%);
-    color:#d8e8ff;
+    color:#dbeafe;
     font-size:18px;
 }
 
 .input-box input{
     width:100%;
-    padding:15px 18px 15px 48px;
+    padding:15px 18px 15px 50px;
     border:none;
     outline:none;
     border-radius:14px;
@@ -164,7 +165,7 @@ body::after{
 }
 
 .input-box input::placeholder{
-    color:#d8e8ff;
+    color:#dbeafe;
 }
 
 .input-box input:focus{
@@ -190,14 +191,14 @@ button{
 button:hover{
     transform:translateY(-3px);
     background:#00bfff;
-    box-shadow:0 0 20px rgba(0,212,255,.6);
+    box-shadow:0 0 18px rgba(0,212,255,.6);
 }
 
 /* ================= SIGNUP LINK ================= */
 .signup-text{
-    margin-top:22px;
+    margin-top:24px;
+    color:#d8e8ff;
     font-size:15px;
-    color:#dcecff;
 }
 
 .signup-text a{
@@ -214,13 +215,13 @@ button:hover{
 /* ================= FOOTER ================= */
 .footer{
     position:relative;
-    z-index:10;
+    z-index:20;
     width:100%;
     text-align:center;
     color:#ffffff;
-    margin-top:22px;
-    padding-bottom:10px;
     font-size:14px;
+    margin-top:20px;
+    padding:10px 15px 20px;
     line-height:1.6;
 }
 
@@ -233,12 +234,12 @@ button:hover{
 @media (max-width:768px){
 
     body{
-        padding:20px 15px;
+        padding:25px 15px;
     }
 
     .login-box{
-        max-width:380px;
-        padding:35px 25px;
+        max-width:390px;
+        padding:35px 28px;
     }
 
     .login-box h1{
@@ -254,15 +255,14 @@ button:hover{
 @media (max-width:480px){
 
     body{
-        justify-content:flex-start;
-        padding-top:60px;
-        padding-bottom:30px;
+        padding:35px 15px;
+        justify-content:center;
     }
 
     .login-box{
         width:100%;
         max-width:360px;
-        padding:28px 20px;
+        padding:30px 22px;
         border-radius:20px;
     }
 
@@ -275,8 +275,8 @@ button:hover{
     }
 
     .input-box input{
-        padding:14px 14px 14px 45px;
         font-size:14px;
+        padding:14px 14px 14px 45px;
     }
 
     button{
@@ -289,8 +289,9 @@ button:hover{
     }
 
     .footer{
-        margin-top:18px;
         font-size:12px;
-        padding:0 12px 20px;
+        margin-top:15px;
+        padding:0 10px 20px;
+        line-height:1.5;
     }
 }

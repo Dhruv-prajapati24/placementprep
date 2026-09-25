@@ -8,17 +8,17 @@
     <!-- SEO Title -->
     <title>PlacementPrep – AI Placement Preparation Platform</title>
 
-    <!-- SEO Meta Tags -->
+    <!-- SEO Meta -->
     <meta name="description"
-          content="Free AI Placement Preparation Platform for Aptitude Practice, DSA Sheet, Resume Analyzer, Interview Preparation and Job Tracker."/>
+          content="Free AI Placement Preparation Platform for Aptitude Practice, DSA Sheet, Resume Analyzer, Interview Preparation and Job Tracker.">
 
     <meta name="keywords"
-          content="Placement Preparation, Aptitude Practice, DSA Sheet, Resume Analyzer, Interview Preparation, PlacementPrep, AI Placement Prep"/>
+          content="Placement Preparation, Aptitude Practice, DSA Sheet, Resume Analyzer, Interview Preparation, PlacementPrep, AI Placement Prep">
 
     <meta name="robots" content="index, follow">
     <meta name="author" content="Dhruv Prajapati">
 
-    <!-- Google Structured Data (Hidden from users) -->
+    <!-- Google Structured Data -->
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
@@ -45,60 +45,63 @@
 
 <body>
 
-<div class="login-box">
+    <!-- ================= LOGIN CARD ================= -->
+    <div class="login-box">
 
-    <h1>🤖 AI Placement Prep</h1>
-    <p>Login to continue your placement journey.</p>
+        <h1>🤖 AI Placement Prep</h1>
+        <p>Login to continue your placement journey.</p>
 
-    <!-- Signup Success Message -->
-    <div th:if="${param.success}" class="success-box">
-        <i class="fa-solid fa-circle-check"></i>
-        Account Created Successfully! Please Login.
-    </div>
-
-    <!-- Wrong Email / Password -->
-    <div th:if="${param.error}" class="error-box">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        Invalid Email or Password.
-    </div>
-
-    <!-- Login Form -->
-    <form action="/login" method="post">
-
-        <div class="input-box">
-            <i class="fa-solid fa-envelope"></i>
-            <input type="email"
-                   name="email"
-                   placeholder="Enter Email"
-                   required>
+        <!-- Signup Success -->
+        <div th:if="${param.success}" class="success-box">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Account Created Successfully! Please Login.</span>
         </div>
 
-        <div class="input-box">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password"
-                   name="password"
-                   placeholder="Enter Password"
-                   required>
+        <!-- Login Error -->
+        <div th:if="${param.error}" class="error-box">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Invalid Email or Password.</span>
         </div>
 
-        <button type="submit">
-            <i class="fa-solid fa-right-to-bracket"></i>
-            LOGIN
-        </button>
+        <!-- Login Form -->
+        <form th:action="@{/login}" method="post">
 
-    </form>
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       required>
+            </div>
 
-    <p class="signup-text">
-        Don't have an account?
-        <a href="/signup">Signup</a>
-    </p>
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password"
+                       name="password"
+                       placeholder="Enter Password"
+                       required>
+            </div>
 
-</div>
+            <button type="submit">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                LOGIN
+            </button>
 
-<!-- Footer (Visible to users) -->
-<footer class="footer">
-    © 2026 PlacementPrep | Developed by <strong>Dhruv Prajapati</strong>
-</footer>
+        </form>
+
+        <!-- Signup Link -->
+        <p class="signup-text">
+            Don't have an account?
+            <a th:href="@{/signup}">Signup</a>
+        </p>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        © 2026 PlacementPrep | Developed by
+        <strong>Dhruv Prajapati</strong>
+    </footer>
 
 </body>
 </html>
