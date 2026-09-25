@@ -1,6 +1,7 @@
 /* ================= GOOGLE FONT ================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* ================= RESET ================= */
 *{
     margin:0;
     padding:0;
@@ -18,57 +19,59 @@ body{
     background:linear-gradient(135deg,#020024,#090979,#00d4ff);
     position:relative;
     overflow-x:hidden;
-    padding:20px;
+    padding:30px 15px;
 }
 
 /* ================= BACKGROUND GLOW ================= */
 body::before{
     content:"";
     position:absolute;
-    width:350px;
-    height:350px;
+    width:320px;
+    height:320px;
     background:#00d4ff;
     border-radius:50%;
     filter:blur(120px);
-    top:-80px;
-    left:-80px;
+    top:-120px;
+    left:-120px;
+    opacity:.7;
     z-index:0;
 }
 
 body::after{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
+    width:280px;
+    height:280px;
     background:#8a2be2;
     border-radius:50%;
     filter:blur(120px);
-    bottom:-80px;
-    right:-80px;
+    bottom:-100px;
+    right:-100px;
+    opacity:.7;
     z-index:0;
 }
 
 /* ================= LOGIN BOX ================= */
 .login-box{
     position:relative;
-    width:400px;
-    max-width:100%;
-    padding:40px 35px;
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.20);
-    backdrop-filter:blur(18px);
-    border-radius:22px;
-    box-shadow:0 10px 35px rgba(0,0,0,0.35);
-    color:white;
-    text-align:center;
     z-index:10;
+    width:100%;
+    max-width:420px;
+    padding:40px 32px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.18);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    text-align:center;
+    color:#fff;
     animation:fadeIn .8s ease;
 }
 
 @keyframes fadeIn{
     from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(25px);
     }
     to{
         opacity:1;
@@ -76,31 +79,34 @@ body::after{
     }
 }
 
+/* ================= TITLE ================= */
 .login-box h1{
-    font-size:30px;
-    margin-bottom:10px;
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:12px;
+    line-height:1.25;
 }
 
 .login-box p{
-    color:#d8e8ff;
-    margin-bottom:20px;
-    font-size:14px;
-    line-height:1.5;
+    font-size:15px;
+    color:#dcecff;
+    margin-bottom:24px;
+    line-height:1.6;
 }
 
-/* ================= SUCCESS MESSAGE ================= */
+/* ================= SUCCESS ================= */
 .success-box{
     width:100%;
-    background:rgba(0,255,127,.18);
+    background:rgba(0,255,140,.15);
     border:1px solid #00ff99;
-    color:#d8ffe8;
+    color:#dfffea;
     padding:12px;
     border-radius:10px;
     margin-bottom:18px;
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:10px;
+    align-items:center;
+    gap:8px;
     font-size:14px;
     font-weight:600;
 }
@@ -109,19 +115,19 @@ body::after{
     color:#00ff99;
 }
 
-/* ================= ERROR MESSAGE ================= */
+/* ================= ERROR ================= */
 .error-box{
     width:100%;
-    background:rgba(255,77,77,.18);
+    background:rgba(255,77,77,.15);
     border:1px solid #ff4d4d;
-    color:#ffe5e5;
+    color:#ffe6e6;
     padding:12px;
     border-radius:10px;
     margin-bottom:18px;
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:10px;
+    align-items:center;
+    gap:8px;
     font-size:14px;
     font-weight:600;
 }
@@ -130,53 +136,53 @@ body::after{
     color:#ff4d4d;
 }
 
-/* ================= INPUT BOX ================= */
+/* ================= INPUT ================= */
 .input-box{
     position:relative;
-    margin:15px 0;
+    margin:16px 0;
 }
 
 .input-box i{
     position:absolute;
-    left:15px;
+    left:18px;
     top:50%;
     transform:translateY(-50%);
-    color:#dbeafe;
-    font-size:16px;
+    color:#d8e8ff;
+    font-size:18px;
 }
 
 .input-box input{
     width:100%;
-    padding:14px 14px 14px 45px;
+    padding:15px 18px 15px 48px;
     border:none;
     outline:none;
-    border-radius:12px;
+    border-radius:14px;
     background:rgba(255,255,255,.15);
-    color:white;
+    color:#fff;
     font-size:15px;
     transition:.3s;
 }
 
 .input-box input::placeholder{
-    color:#dbeafe;
+    color:#d8e8ff;
 }
 
 .input-box input:focus{
     background:rgba(255,255,255,.22);
-    box-shadow:0 0 10px rgba(0,212,255,.4);
+    box-shadow:0 0 12px rgba(0,212,255,.5);
 }
 
 /* ================= BUTTON ================= */
 button{
     width:100%;
-    padding:14px;
+    padding:15px;
     margin-top:18px;
-    background:#00d4ff;
-    color:#021024;
-    font-size:16px;
-    font-weight:600;
     border:none;
-    border-radius:12px;
+    border-radius:14px;
+    background:#00d4ff;
+    color:#001a33;
+    font-size:16px;
+    font-weight:700;
     cursor:pointer;
     transition:.3s;
 }
@@ -184,14 +190,14 @@ button{
 button:hover{
     transform:translateY(-3px);
     background:#00bfff;
-    box-shadow:0 0 20px #00d4ff;
+    box-shadow:0 0 20px rgba(0,212,255,.6);
 }
 
 /* ================= SIGNUP LINK ================= */
 .signup-text{
-    margin-top:20px;
-    color:#d8e8ff;
-    font-size:14px;
+    margin-top:22px;
+    font-size:15px;
+    color:#dcecff;
 }
 
 .signup-text a{
@@ -201,19 +207,21 @@ button:hover{
 }
 
 .signup-text a:hover{
-    color:white;
+    color:#fff;
     text-decoration:underline;
 }
 
 /* ================= FOOTER ================= */
 .footer{
     position:relative;
-    margin-top:25px;
-    text-align:center;
-    color:#eaf4ff;
-    font-size:14px;
     z-index:10;
-    opacity:0.9;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+    margin-top:22px;
+    padding-bottom:10px;
+    font-size:14px;
+    line-height:1.6;
 }
 
 .footer strong{
@@ -221,36 +229,68 @@ button:hover{
     font-weight:700;
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:480px){
+/* ================= TABLET ================= */
+@media (max-width:768px){
 
     body{
-        padding:15px;
+        padding:20px 15px;
+    }
+
+    .login-box{
+        max-width:380px;
+        padding:35px 25px;
+    }
+
+    .login-box h1{
+        font-size:30px;
+    }
+
+    .footer{
+        font-size:13px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:480px){
+
+    body{
+        justify-content:flex-start;
+        padding-top:60px;
+        padding-bottom:30px;
     }
 
     .login-box{
         width:100%;
-        padding:30px 22px;
+        max-width:360px;
+        padding:28px 20px;
+        border-radius:20px;
     }
 
     .login-box h1{
-        font-size:24px;
+        font-size:28px;
     }
 
     .login-box p{
-        font-size:13px;
+        font-size:14px;
     }
 
     .input-box input{
+        padding:14px 14px 14px 45px;
         font-size:14px;
     }
 
     button{
         font-size:15px;
+        padding:14px;
+    }
+
+    .signup-text{
+        font-size:14px;
     }
 
     .footer{
-        font-size:12px;
         margin-top:18px;
+        font-size:12px;
+        padding:0 12px 20px;
     }
 }
