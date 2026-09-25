@@ -34,7 +34,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- CSS (500 Error Fix) -->
+    <!-- CSS -->
     <link rel="stylesheet" th:href="@{/style.css}">
 
     <!-- Font Awesome -->
@@ -45,61 +45,69 @@
 
 <body>
 
-    <div class="login-box">
+    <!-- Page Wrapper -->
+    <div class="page-container">
 
-        <h1>🤖 AI Placement Prep</h1>
-        <p>Login to continue your placement journey.</p>
+        <!-- Login Card -->
+        <div class="login-box">
 
-        <!-- Success Message -->
-        <div th:if="${param.success}" class="success-box">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>Account Created Successfully! Please Login.</span>
-        </div>
+            <h1>🤖 AI Placement Prep</h1>
+            <p>Login to continue your placement journey.</p>
 
-        <!-- Error Message -->
-        <div th:if="${param.error}" class="error-box">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <span>Invalid Email or Password.</span>
-        </div>
-
-        <!-- Login Form -->
-        <form th:action="@{/login}" method="post">
-
-            <div class="input-box">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email"
-                       name="email"
-                       placeholder="Enter Email"
-                       required>
+            <!-- Signup Success -->
+            <div th:if="${param.success}" class="success-box">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Account Created Successfully! Please Login.</span>
             </div>
 
-            <div class="input-box">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password"
-                       name="password"
-                       placeholder="Enter Password"
-                       required>
+            <!-- Login Error -->
+            <div th:if="${param.error}" class="error-box">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>Invalid Email or Password.</span>
             </div>
 
-            <button type="submit">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                LOGIN
-            </button>
+            <!-- Login Form -->
+            <form th:action="@{/login}" method="post">
 
-        </form>
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email"
+                           name="email"
+                           placeholder="Enter Email"
+                           required>
+                </div>
 
-        <p class="signup-text">
-            Don't have an account?
-            <a th:href="@{/signup}">Signup</a>
-        </p>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password"
+                           name="password"
+                           placeholder="Enter Password"
+                           required>
+                </div>
+
+                <button type="submit">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    LOGIN
+                </button>
+
+            </form>
+
+            <!-- Signup Link -->
+            <p class="signup-text">
+                Don't have an account?
+                <a th:href="@{/signup}">Signup</a>
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            © 2026 PlacementPrep | Developed by
+            <strong>Dhruv Prajapati</strong>
+        </footer>
 
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        © 2026 PlacementPrep | Developed by
-        <strong>Dhruv Prajapati</strong>
-    </footer>
-
 </body>
+
 </html>
