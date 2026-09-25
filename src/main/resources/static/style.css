@@ -219,3 +219,18 @@ button:hover{
         font-size:15px;
     }
 }
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer strong {
+    color: #00e5ff;
+    font-weight: 600;
+}
