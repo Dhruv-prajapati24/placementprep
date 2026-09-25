@@ -13,23 +13,13 @@
 body{
     min-height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     background:linear-gradient(135deg,#020024,#090979,#00d4ff);
     position:relative;
     overflow-x:hidden;
-    padding:20px;
-}
-
-/* ================= PAGE CONTAINER ================= */
-.page-container{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    z-index:10;
+    padding:25px 15px;
 }
 
 /* ================= BACKGROUND GLOW ================= */
@@ -44,6 +34,7 @@ body::before{
     top:-120px;
     left:-120px;
     opacity:.7;
+    z-index:0;
 }
 
 body::after{
@@ -57,10 +48,13 @@ body::after{
     bottom:-120px;
     right:-120px;
     opacity:.7;
+    z-index:0;
 }
 
 /* ================= LOGIN BOX ================= */
 .login-box{
+    position:relative;
+    z-index:10;
     width:100%;
     max-width:420px;
     padding:40px 35px;
@@ -74,6 +68,7 @@ body::after{
     animation:fadeIn .8s ease;
 }
 
+/* ================= ANIMATION ================= */
 @keyframes fadeIn{
     from{
         opacity:0;
@@ -100,7 +95,7 @@ body::after{
     margin-bottom:24px;
 }
 
-/* ================= SUCCESS ================= */
+/* ================= SUCCESS MESSAGE ================= */
 .success-box{
     width:100%;
     background:rgba(0,255,140,.18);
@@ -121,7 +116,7 @@ body::after{
     color:#00ff99;
 }
 
-/* ================= ERROR ================= */
+/* ================= ERROR MESSAGE ================= */
 .error-box{
     width:100%;
     background:rgba(255,77,77,.18);
@@ -199,7 +194,7 @@ button:hover{
     box-shadow:0 0 18px rgba(0,212,255,.6);
 }
 
-/* ================= SIGNUP ================= */
+/* ================= SIGNUP LINK ================= */
 .signup-text{
     margin-top:24px;
     color:#d8e8ff;
@@ -219,12 +214,16 @@ button:hover{
 
 /* ================= FOOTER ================= */
 .footer{
-    margin-top:22px;
+    position:relative;
+    z-index:10;
+    width:100%;
     text-align:center;
     color:#ffffff;
     font-size:14px;
     line-height:1.6;
-    width:100%;
+    margin-top:40px;
+    margin-bottom:10px;
+    padding:0 10px;
 }
 
 .footer strong{
@@ -233,7 +232,7 @@ button:hover{
 }
 
 /* ================= TABLET ================= */
-@media(max-width:768px){
+@media (max-width:768px){
 
     .login-box{
         max-width:390px;
@@ -246,17 +245,19 @@ button:hover{
 
     .footer{
         font-size:13px;
+        margin-top:30px;
     }
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:480px){
+@media (max-width:480px){
 
     body{
-        padding:25px 15px;
+        padding:30px 15px;
     }
 
     .login-box{
+        width:100%;
         max-width:350px;
         padding:30px 22px;
         border-radius:20px;
@@ -285,8 +286,9 @@ button:hover{
     }
 
     .footer{
-        margin-top:18px;
         font-size:12px;
-        padding:0 10px;
+        margin-top:25px;
+        line-height:1.5;
+        padding:0 12px 15px;
     }
 }
