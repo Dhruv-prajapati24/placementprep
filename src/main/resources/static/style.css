@@ -10,13 +10,15 @@
 
 /* ================= BODY ================= */
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     background:linear-gradient(135deg,#020024,#090979,#00d4ff);
-    overflow:hidden;
     position:relative;
+    overflow-x:hidden;
+    padding:20px;
 }
 
 /* ================= BACKGROUND GLOW ================= */
@@ -30,6 +32,7 @@ body::before{
     filter:blur(120px);
     top:-80px;
     left:-80px;
+    z-index:0;
 }
 
 body::after{
@@ -42,22 +45,24 @@ body::after{
     filter:blur(120px);
     bottom:-80px;
     right:-80px;
+    z-index:0;
 }
 
 /* ================= LOGIN BOX ================= */
 .login-box{
     position:relative;
     width:400px;
+    max-width:100%;
     padding:40px 35px;
     background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.20);
     backdrop-filter:blur(18px);
     border-radius:22px;
     box-shadow:0 10px 35px rgba(0,0,0,0.35);
     color:white;
     text-align:center;
     z-index:10;
-    animation:fadeIn 0.8s ease;
+    animation:fadeIn .8s ease;
 }
 
 @keyframes fadeIn{
@@ -80,12 +85,13 @@ body::after{
     color:#d8e8ff;
     margin-bottom:20px;
     font-size:14px;
+    line-height:1.5;
 }
 
 /* ================= SUCCESS MESSAGE ================= */
 .success-box{
     width:100%;
-    background:rgba(0,255,127,0.18);
+    background:rgba(0,255,127,.18);
     border:1px solid #00ff99;
     color:#d8ffe8;
     padding:12px;
@@ -106,7 +112,7 @@ body::after{
 /* ================= ERROR MESSAGE ================= */
 .error-box{
     width:100%;
-    background:rgba(255,77,77,0.18);
+    background:rgba(255,77,77,.18);
     border:1px solid #ff4d4d;
     color:#ffe5e5;
     padding:12px;
@@ -145,10 +151,10 @@ body::after{
     border:none;
     outline:none;
     border-radius:12px;
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,.15);
     color:white;
     font-size:15px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .input-box input::placeholder{
@@ -156,7 +162,7 @@ body::after{
 }
 
 .input-box input:focus{
-    background:rgba(255,255,255,0.22);
+    background:rgba(255,255,255,.22);
     box-shadow:0 0 10px rgba(0,212,255,.4);
 }
 
@@ -199,16 +205,40 @@ button:hover{
     text-decoration:underline;
 }
 
+/* ================= FOOTER ================= */
+.footer{
+    position:relative;
+    margin-top:25px;
+    text-align:center;
+    color:#eaf4ff;
+    font-size:14px;
+    z-index:10;
+    opacity:0.9;
+}
+
+.footer strong{
+    color:#00E5FF;
+    font-weight:700;
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:480px){
 
+    body{
+        padding:15px;
+    }
+
     .login-box{
-        width:92%;
+        width:100%;
         padding:30px 22px;
     }
 
     .login-box h1{
         font-size:24px;
+    }
+
+    .login-box p{
+        font-size:13px;
     }
 
     .input-box input{
@@ -218,19 +248,9 @@ button:hover{
     button{
         font-size:15px;
     }
-}
 
-/* Footer */
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.footer strong {
-    color: #00e5ff;
-    font-weight: 600;
+    .footer{
+        font-size:12px;
+        margin-top:18px;
+    }
 }
