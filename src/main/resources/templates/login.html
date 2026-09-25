@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Title -->
+    <!-- SEO -->
     <title>PlacementPrep – AI Placement Preparation Platform</title>
 
-    <!-- SEO Meta -->
     <meta name="description"
           content="Free AI Placement Preparation Platform for Aptitude Practice, DSA Sheet, Resume Analyzer, Interview Preparation and Job Tracker.">
 
@@ -35,29 +34,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" th:href="@{/style.css(v=${T(java.lang.System).currentTimeMillis()})}">
+    <!-- CSS (500 Error Fix) -->
+    <link rel="stylesheet" th:href="@{/style.css}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
-    <!-- ================= LOGIN CARD ================= -->
     <div class="login-box">
 
         <h1>🤖 AI Placement Prep</h1>
         <p>Login to continue your placement journey.</p>
 
-        <!-- Signup Success -->
+        <!-- Success Message -->
         <div th:if="${param.success}" class="success-box">
             <i class="fa-solid fa-circle-check"></i>
             <span>Account Created Successfully! Please Login.</span>
         </div>
 
-        <!-- Login Error -->
+        <!-- Error Message -->
         <div th:if="${param.error}" class="error-box">
             <i class="fa-solid fa-circle-exclamation"></i>
             <span>Invalid Email or Password.</span>
@@ -89,7 +88,6 @@
 
         </form>
 
-        <!-- Signup Link -->
         <p class="signup-text">
             Don't have an account?
             <a th:href="@{/signup}">Signup</a>
@@ -97,7 +95,7 @@
 
     </div>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- Footer -->
     <footer class="footer">
         © 2026 PlacementPrep | Developed by
         <strong>Dhruv Prajapati</strong>
